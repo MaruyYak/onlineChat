@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Chat</title>
+    <link rel="stylesheet" href="./chat-page.css">
+</head>
+<body>
+
+    <!-- <div class="modal-error">
+      <div class="error-container">
+        <p>A user with this login is already authorized</p>
+        <button>OK</button>
+      </div>
+    </div> -->
+
+    </div>
+    <div class="chat-container">
+
+      <div class="chat-header">
+        <h1>FUN CHAT</h1>
+        <div class="user-data">
+          <p class="users-name">MARY</p>
+          <img class="avatar" src="../../assets/user-avatar.gif" alt="avatar">
+        </div>
+      </div>
+
+      <div class="chat-wrapper">
+
+        <div class="chat-menu">
+          <div class="menu-buttons">
+            <div class="exit-button">
+              <img src="../../assets/log-out.png" alt="">
+            </div>
+            <div class="info-button">
+                <img src="../../assets/info-icon.png" alt="">
+            </div>
+            <div class="info-users selected">
+                <img src="../../assets/users-list.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="user-area">
+          <input type="text" placeholder="Search">
+          <ul class="user-list">
+              <li id="user">User 1<span class="friend-status offline"></span>
+              </li>
+              <li id="user">User 1</li>
+              <li id="user">User 1</li>
+              <li id="user">User 1</li>
+          </ul>
+        </div>
+
+        <div class="chat-info">
+          <h3 class="info-title">FUN CHAT</h3>
+          <img src="../../assets/logo.png" alt="">
+          <p>The application is designed to demonstrate the Fun Chat task as part of the RSSchool JS/FE 2023Q3 course</p>
+          <a href="https://github.com/MaruyYak">By MARYYAK</a>
+        </div>
+
+        <div class="chat-content">
+            <div class="chat-area">
+              <div class="friend-info">
+                <label class="friend-name">Mary-friend</label>
+                <span class="friend-status offline"></span>
+              </div>
+                <div class="dialog-content">
+                  <div class="message-container">
+                    <div class="message-content">
+                        <div id="mes-menu">
+                          <img id='edit' src="../../assets/pencil.png" alt="pencil">
+                          <img id='delete' src="../../assets/trash.png" alt="trash">
+                        </div>
+                        <p class="mes_from" >Mary</p>
+                        <p class="text">Тут будет текст сообщения</p>
+                        <div class="message-info">
+                          <label id="time" for="time">19.40</label>
+                          <div class="unread-mark">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <form id="messageForm" class="message-area">
+                  <input type="text" name="name" id="name" placeholder="Name">
+                  <input type="text" name="message" id="message" placeholder="Message">
+                  <input type="submit" value="Send" class="send-button">
+              </form>
+              
+              <div id="chat"></div>
+              <script type="module">
+                  const chatEl = document.getElementById("chat");
+                  const ws = new WebSocket("ws://127.0.0.1:4000");
+              
+                  ws.onmessage = (message) => {
+                      console.log(JSON.parse(message.data));
+                  };
+              
+                  const send = (event) => {
+                      event.preventDefault();
+                      const name = document.getElementById("name").value;
+                      const mess = document.getElementById("message").value;
+
+                      const request = {
+                          id: "1",
+                          type: "USER_LOGIN",
+                          payload: {
+                              user: {
+                                  login: name,
+                                  password: mess
+                              }
+                          }
+                      };
+
+                      ws.send(JSON.stringify(request));
+                      return false;
+                  };
+              
+                  const formEl = document.getElementById("messageForm");
+                  formEl.addEventListener('submit', send);
+              </script>
+              
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-info">
+      <img src="../../assets/rs_school.svg" alt="RSSchool">
+      <a href="https://github.com/MaruyYak">MaruyYak</a>
+      <span>2023</span>
+    </footer>
+</body>
+</html>
