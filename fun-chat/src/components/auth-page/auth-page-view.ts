@@ -139,60 +139,6 @@ export class AuthPageView {
       });
     });
 
-    // const radioButtons = createElement({
-    //   tag: "div",
-    //   classes: ["radio-buttons"],
-    //   parent: formList
-    // });
-
-    // const maleLabel = createElement({
-    //   tag: "label",
-    //   text: "Male",
-    //   attributes: {
-    //     for: "male"
-    //   },
-    //   parent: radioButtons
-    // });
-    // const maleButton = createElement({
-    //   tag: "input",
-    //   attributes: {
-    //     type: "radio",
-    //     id: "male",
-    //     value:"male",
-    //   },
-    //   parent: radioButtons
-    // }) as HTMLInputElement;
-
-    // const femaleLabel = createElement({
-    //   tag: "label",
-    //   text: "Female",
-    //   attributes: {
-    //     for: "female"
-    //   },
-    //   parent: radioButtons
-    // });
-    // const felameButton = createElement({
-    //   tag: "input",
-    //   attributes: {
-    //     type: "radio",
-    //     id: "female",
-    //     value:"female",
-    //   },
-    //   parent: radioButtons
-    // }) as HTMLInputElement;
-    
-    // maleButton.addEventListener("click", () => {
-    //   if (maleButton.checked) {
-    //     felameButton.checked = false
-    //   }
-    // })
-    
-    // felameButton.addEventListener("click", () => {
-    //   if (felameButton.checked) {
-    //     maleButton.checked = false
-    //   }
-    // })
-
     const joinBtnListItem = createElement({
       tag: "li",
       parent: formList,
@@ -205,7 +151,8 @@ export class AuthPageView {
         type: "submit",
         id: "join-btn",
         name: "join",
-        alt: "Join"
+        alt: "Join",
+        value:"JOIN",
      },
       parent: joinBtnListItem,
     }) as HTMLInputElement;

@@ -39,10 +39,12 @@ export class UserListController {
         classes: ["status", `${classStus}`],
         parent: userItem
       });
+
       this.userListArr.push({user: user, htmlEl: userItem})
     });
 
   }
+
 
   public setStatus(user: User) {
     const externalUser = this.userList.find(item => item.login === user.login);

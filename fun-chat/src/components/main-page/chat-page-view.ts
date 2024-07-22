@@ -357,20 +357,6 @@ export class ChatPageView {
       parent: mesMenu,
     });
 
-    // createElement({
-    //   tag: "img",
-    //   src: "./assets/edit.png",
-    //   id: 'edit',
-    //   parent: mesMenu,
-    // });
-
-    // createElement({
-    //   tag: "img",
-    //   src: "./assets/delete.png",
-    //   id: 'delete',
-    //   parent: mesMenu,
-    // });
-
     createElement({
         tag: "p",
         text: `${messageDetails.from }`,

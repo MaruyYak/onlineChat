@@ -83,12 +83,12 @@ export class ChatController {
   }
   
   public showMessagesHistory(messages: Message[]) {
+    console.log("messages history", messages)
     this.messagesArr = messages.map((message) => ({
       message,
       htmlEl: this.showMessage(message)
     }))
   }
-
 
   public setReadStatus(message: Message) {
     const readMessage = this.messagesArr.find(mes => mes.message.id === message.id)
