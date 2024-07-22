@@ -15,15 +15,13 @@ Welcome to **Fun Chat**, an chat application designed for communication with fri
 - JavaScript (for asynchronous coding and DOM manipulation)
 - HTML/CSS (for creating markup and styling)
 
-## Setting Up for Development
-Before initiating the development of the client application:
-1. Clone the [server](https://github.com/MaruyYak/fun-chat-server).
+## Before Launching the [Deployment](https://maruyyak.github.io/onlineChat/fun-chat/dist/index.html)
+1. Clone the [Server](https://github.com/MaruyYak/fun-chat-server).
 2. Launch the local server.
 3. Port Configuration:
-   - Create the `.env` file.
-   - Add port settings: `SERVER_PORT=4000 LOG=ALL`.
+   - Create a `.env` file.
+   - Add the following port settings: `SERVER_PORT=4000` and `LOG=ALL`.
    - Start the local server using `npm run start`.
-
 
 ---
 This project is a part of my portfolio and showcases my skills in creating a functional and visually appealing chat application.
